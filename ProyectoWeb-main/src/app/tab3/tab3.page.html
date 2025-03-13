@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" >HidroVerde</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="top-section">
+      <br>
+      <img src="/assets/icon/icono.png" alt="" width="70px">
+      <br><br>
+
+      <!-- Botones generados dinámicamente -->
+      
+
+      <!-- <div class="action-buttons">
+        <ion-button color="success" (click)="agregarAspersor()">
+          <img src="/assets/icon/plus.png" alt="" width="20px">
+        </ion-button>
+        <ion-button color="danger" (click)="eliminarAspersor()" [disabled]="selectedIndex === null">
+          <img src="/assets/icon/less.png" alt="" width="20px">
+        </ion-button>
+      </div> -->
+    </div>
+    
+
+    <div class="info-section" *ngIf="selectedIndex !== null">
+      <br><br>
+      <h3>{{ aspersores[selectedIndex].nombre || 'Seleccione un aspersor' }}</h3>
+      <br><br>
+      <div class="data-container">
+        <div class="data-row">
+          <div class="data-label">Humedad</div>
+          <div class="data-value">{{ aspersores[selectedIndex].humedad || '--' }} %</div>
+        </div>
+        <!-- <div class="data-row">
+          <div class="data-label">Temperatura</div>
+          <div class="data-value">{{ aspersores[selectedIndex].temperatura || '--' }}°C</div>
+        </div> -->
+      </div>
+
+    
+      <!-- Botón ON/OFF -->
+      <br><br>
+      <div
+        
+        class="toggle-container" 
+        [class.on]="aspersores[selectedIndex].encendido" 
+        [class.off]="!aspersores[selectedIndex].encendido"
+      >
+        <div class="toggle-button" (click)="toggleAspersor()">
+          <div class="toggle-text on">ON</div>
+          <div class="toggle-circle"></div>
+          <div class="toggle-text off">OFF</div>
+        </div>
+      </div>
+      <br><br>
+      <!-- Botón para ir a Tab 2 -->
+      <ion-button class="btn" (click)="irATab2()">
+        Programar aspersor
+      </ion-button>
+
+      <br><br>
+    </div>
+    
+  </div>
+</ion-content>

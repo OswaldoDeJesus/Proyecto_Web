@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="dashboard">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <h2>Estado General</h2>
+      </ion-col>
+    </ion-row>
+
+    <!-- Información de los Aspersores -->
+    <ion-row *ngFor="let aspersor of aspersores; let i = index">
+      <ion-col size="12">
+        <div class="aspersor-card">
+          <h3>{{ aspersor.nombre }}</h3>
+          <p><strong>Humedad:</strong> {{ aspersor.humedad }}%</p>
+          <p><strong>Programado:</strong> {{ aspersor.abrir }} - {{ aspersor.cerrar }}</p>
+          <p><strong>Días:</strong> {{ aspersor.dias.join(', ') || 'No programado' }}</p>
+          <ion-button color="{{ aspersor.encendido ? 'danger' : 'success' }}" (click)="toggleAspersor(i)">
+            {{ aspersor.encendido ? 'Apagar' : 'Encender' }}
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

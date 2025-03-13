@@ -1,0 +1,205 @@
+ion-toolbar {
+  --background: #4CAF50;
+  --color: white;
+  text-align: center;
+}
+
+ion-content {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --background: #C8E6C9;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;      // Ajusta el ancho en porcentaje (puedes probar con 70% o 60% si lo quieres aún más pequeño)
+  max-width: 900px; // Limita el ancho máximo para que no sea demasiado grande en pantallas grandes
+  margin: 0 auto;  // Centra el contenedor en la pantalla
+  
+}
+
+h3{
+  color: white;
+}
+.top-section{
+  margin-top: 80px;
+}
+
+.info-section{
+  margin-bottom: 20px;
+}
+
+.top-section,
+.info-section {
+  width: 90%;
+  padding: 15px;
+  text-align: center;
+  box-sizing: border-box;
+  flex: 1; 
+}
+
+.top-section{
+  border-radius: 15px 15px 0px 0px;
+}
+.info-section{
+  border-radius: 0px 0px 15px 15px;
+}
+
+.top-section {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-section {
+  background: #159167;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.phone-icon {
+  font-size: 40px;
+  color: white;
+}
+
+.sprinkler-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sprinkler-buttons ion-button {
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 200px;
+  max-width: auto;
+  height: 50px;
+  font-size: 14px;
+  text-align: center;
+  --background: #39532e;
+  --color: white;
+}
+
+.sprinkler-buttons ion-button {
+  --background: #C6D982;
+  --color: black;
+  border: none;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.data-row {
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.data-label {
+  font-weight: bold;
+  text-align: left;
+  flex: 1;
+  border: none
+}
+
+.data-value {
+  text-align: right;
+  flex: 1;
+}
+
+.toggle-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-button {
+  width: 70px;
+  height: 30px;
+  background: red;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  position: relative;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+
+.toggle-circle {
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  transition: left 0.3s ease-in-out;
+}
+
+.toggle-container.on .toggle-button {
+  background: rgb(38, 243, 38);
+}
+
+.toggle-container.on .toggle-circle {
+  left: 40px;
+}
+
+.toggle-container.off .toggle-circle {
+  left: 5px;
+}
+
+.toggle-text {
+  font-weight: bold;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.toggle-container.on .toggle-text.off {
+  opacity: 0;
+}
+
+.toggle-container.off .toggle-text.on {
+  opacity: 0;
+}
+
+.btn{
+  padding: 5px;
+  --background: #C6D982;
+  color: black;
+  min-width: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.btn:hover{
+  --background: white;
+  color: black;
+  
+}

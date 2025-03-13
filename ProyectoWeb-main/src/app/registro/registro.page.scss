@@ -1,0 +1,126 @@
+/* Estilos generales */
+ion-header {
+  ion-toolbar {
+    height: 60px; /* Mantén la altura del contenedor superior */
+    padding: 0 5px; /* Mantén el padding */
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    
+    /* Color de fondo para el ion-toolbar */
+    --background: #4CAF50; /* Color sólido, por ejemplo, verde */
+
+    ion-title {
+      font-size: 20px; /* Tamaño más grande de la letra */
+      color: white;
+      font-family: 'Arial', sans-serif; /* Fuente bonita y moderna */
+      text-align: center;
+    }
+    
+    .logo {
+      width: 130px; /* Mantén el tamaño del logo */
+      height: auto;
+      max-width: 100%; /* Hace que el logo sea responsivo */
+    }
+  }
+}
+
+ion-content {
+  --background: rgb(53,143,20);
+  /* Gradiente de abajo hacia arriba */
+  --background: #159167;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+ion-card {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  border-radius: 10px; /* Aumenta el radio para hacer el contenedor más redondeado */
+  
+  ion-card-header {
+    text-align: center;
+  }
+  
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    ion-item {
+      width: 100%; /* Asegura que los elementos ocupen todo el ancho del contenedor */
+    }
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  
+  .logo {
+    width: 50px; /* Tamaño del logo en el pie de página */
+    height: auto;
+    max-width: 100%; /* Hace que el logo del pie de página sea responsivo */
+  }
+  
+  .footer-title {
+    font-size: 1.5rem; /* Tamaño medio */
+    font-weight: bold; /* Negritas */
+    color: white; /* Color blanco */
+    margin: 10px 0;
+  }
+}
+
+/* Media Queries para diferentes vistas */
+@media (max-width: 768px) {
+  ion-toolbar {
+    height: 100px; /* Ajusta la altura del contenedor superior */
+    
+    ion-title {
+      font-size: 1.8rem; /* Ajusta el tamaño de la letra */
+      margin-left: -100px; /* Ajusta el margen */
+    }
+  }
+  
+  .footer .logo {
+    width: 40px; /* Ajusta el tamaño del logo en el pie de página */
+  }
+  
+  ion-card-content {
+    ion-item {
+      width: 90%; /* Asegura que los elementos ocupen todo el ancho del contenedor */
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  ion-toolbar {
+    height: 80px; /* Ajusta la altura del contenedor superior */
+    
+    ion-title {
+      font-size: 1.6rem; /* Ajusta el tamaño de la letra */
+      margin-left: -80px; /* Ajusta el margen */
+    }
+  }
+  
+  .footer .logo {
+    width: 30px; /* Ajusta el tamaño del logo en el pie de página */
+  }
+  
+  ion-card-content {
+    ion-item {
+      width: 100%; /* Asegura que los elementos ocupen todo el ancho del contenedor */
+    }
+  }
+}

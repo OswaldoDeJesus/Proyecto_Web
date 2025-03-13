@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Programar aspersor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br><br>
+  
+  <!-- Sección de programación de apertura -->
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="4" class="aspersor ion-text-right">
+        <p>Abrir:</p>
+      </ion-col>
+      <ion-col size="6" class="ion-text-left">
+        <!-- Usamos ion-datetime con [(ngModel)] para enlazar la hora seleccionada -->
+        <ion-datetime [(ngModel)]="abrir" presentation="time" class="compact-time"></ion-datetime>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Sección de programación de cierre -->
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="4" class="aspersor ion-text-right">
+        <p>Cerrar:</p>
+      </ion-col>
+      <ion-col size="6" class="ion-text-left">
+        <!-- Usamos ion-datetime con [(ngModel)] para enlazar la hora seleccionada -->
+        <ion-datetime [(ngModel)]="cerrar" presentation="time" class="compact-time"></ion-datetime>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Sección de programación semanal -->
+  <ion-grid class="ion-padding-top">
+    <ion-row>
+      <ion-col size="12" class="riego ion-text-center">
+        <p>Programar riego semanal</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Días de la semana -->
+  <div class="dias-container">
+    <button 
+      *ngFor="let dia of dias; let i = index"
+      (click)="toggleDia(i)" 
+      class="semana" 
+      [ngClass]="{'selected': dia.seleccionado}">
+      <span *ngIf="!dia.seleccionado">{{ dia.nombre }}</span>
+      <span *ngIf="dia.seleccionado">✔</span>
+    </button>
+  </div>
+
+  <!-- Botón de guardar -->
+  <div class="ion-text-center ion-padding-top">
+    <button class="guardar" (click)="guardarSeleccion()"><p>Guardar</p></button>
+  </div>
+</ion-content>
